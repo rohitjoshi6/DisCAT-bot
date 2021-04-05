@@ -1,7 +1,7 @@
 import discord
 import asyncio
 import requests
-import config
+import os
 
 prefix = "!"
 
@@ -22,4 +22,4 @@ class MyClient(discord.Client):
             await message.channel.send(data['file'])
 
 client = MyClient()
-client.run(config.TOKEN)
+client.run(os.environ['DISCORD_TOKEN'])
